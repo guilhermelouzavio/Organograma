@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './CampoTexto.css'
 
 const CampoTexto = (props) =>{
-    console.log(props)
+    //console.log(props)
     const placeholderModificada = `${props.placeholder}...`;
 
     //toda vez alterado o valor o estado muda e assim o 
