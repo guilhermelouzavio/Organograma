@@ -32,16 +32,21 @@ const Formulario = (props) => {
             imagem,
             time
         })
+
+        setNome('')
+        setCargo('')
+        setImagem('')
+        setTime('')
         console.log('Form foi submetido', nome , cargo, imagem, time)
     }
 
     return (
-        <section className="formulario">
+        <section className='formulario'>
             <form onSubmit={aoSalvar}>
                 <h2>Preencha os dados para criar o card colaborador</h2>
                 <CampoTexto 
                 obrigatorio={true} 
-                label="Nome" 
+                label='Nome' 
                 placeholder="Digite seu nome"
                 valor={nome}
                 aoAlterado={valor => setNome(valor)}/>
