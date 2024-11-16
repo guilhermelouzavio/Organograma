@@ -1,0 +1,41 @@
+
+modulo 1
+Criamos um novo projeto React;
+Criamos componentes funcionais;
+Estilizamos componentes com CSS;
+Analisamos as dependências do projeto;
+Analisamos os comandos disponíveis no package.json.
+
+modulo 2:
+Aprendemos como passar props para um componente;
+Renderizamos listas com o .map;
+Trabalhamos com elementos aninhados usando a prop children;
+Ouvimos elementos disparados pelo DOM: o onSubmit do nosso form.
+
+modulo 3:
+Ler e interpretar mensagens de erro;
+Corrigir erros;
+Depurar o seu código com o debugger.
+
+modulo 4: 
+Controlar inputs utilizando value e onChange;
+Gerenciar o estado de um componente, utilizando o useState;
+Trabalhar com props que são funções.
+
+modulo 5:
+
+Manipular e transformar arrays de objetos;
+Filtrar itens de um array;
+Renderização condicional.
+
+
+sites uteis:
+
+https://ant.design/ - componentes prontos
+https://mui.com/ - componentes prontos
+https://ant.design/docs/react/introduce
+
+publicação de site: Vercel.com
+
+https://www.alura.com.br/formacao-next-js
+https://www.alura.com.br/formacao-react-ts
