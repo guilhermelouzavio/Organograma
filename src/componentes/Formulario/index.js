@@ -1,84 +1,59 @@
-import './Formulario.css'
+import { useState } from 'react'
+import Botao from '../Botao'
 import CampoTexto from '../CampoTexto'
 import ListaSuspensa from '../ListaSuspensa'
-import Botao from '../Botao';
-import { useState } from 'react';
+import './formulario.css'
 
-const Formulario = (props) => {
+const Formulario = ({aoCadastrar, times}) => {
 
-    // const times = [
-        
-    //     'Programação',
-    //     'Front-End',
-    //     'Data Sience',
-    //     'DevOps',
-    //     'UX e Design',
-    //     'Mobile',
-    //     'Inovação e Gestão'
-    // ];
+    const [nome, setNome] = useState('')
+    const [cargo, setCargo] = useState('')
+    const [imagem, setImagem] = useState('')
+    const [time, setTime] = useState('')
 
-    const [nome,setNome] = useState('')
-    const [cargo,setCargo] = useState('')
-    const [imagem,setImagem] = useState('')
-    const [time,setTime] = useState('')
-
-
-    const aoSalvar = (evento) => {
-        //previne o comportamento padrao de recarregar a pagina ao submeter
-        evento.preventDefault();
-        props.aoColaboradorCadastrado({
+    const aoSubmeter = (evento) => {
+            debugger //  utilizado para debugar linha a linha no Chrome
+              //previne o comportamento padrao de recarregar a pagina ao submeter
+        evento.preventDefault()
+        console.log('form enviado', nome, cargo, imagem, time )
+        aoCadastrar({
             nome,
             cargo,
             imagem,
             time
         })
-
-        setNome('')
-        setCargo('')
-        setImagem('')
-        setTime('')
-        console.log('Form foi submetido', nome , cargo, imagem, time)
     }
 
     return (
-        <section className='formulario'>
-            <form onSubmit={aoSalvar}>
-                <h2>Preencha os dados para criar o card colaborador</h2>
+        <section className="formulario-container">
+            <form className="formulario" onSubmit={aoSubmeter}>
+                <h2>Preencha os dados para criar o card do colaborador.</h2>
+                <CampoTexto
+                    obrigatorio={true}
+                    label='Nome'
+                    placeholder='Digite seu nome '
+                    valor={nome}
+                    aoAlterado={valor => setNome(valor)}/>
+                <CampoTexto
+                    obrigatorio={true}
+                    label='Cargo' 
+                    placeholder='Digite seu cargo '
+                    valor={cargo}
+                    aoAlterado={valor => setCargo(valor)}/>
                 <CampoTexto 
-                obrigatorio={true} 
-                label='Nome' 
-                placeholder="Digite seu nome"
-                valor={nome}
-                aoAlterado={valor => setNome(valor)}/>
-                
-                <CampoTexto 
-                obrigatorio={true} 
-                label="Cargo" 
-                placeholder="Digite seu cargo"
-                valor={cargo}
-                aoAlterado={cargo => setCargo(cargo)}
-                />
-                <CampoTexto 
-                label="Imagem" 
-                placeholder="Digite o endereço da imagem"
-                valor={imagem}
-                aoAlterado={imagem => setImagem(imagem)}
-                />
+                    label='Imagem' 
+                    placeholder='Informe o endereço da imagem '
+                    aoAlterado={valor => setImagem(valor)}/>
                 <ListaSuspensa 
-                obrigatorio={true} 
-                label="Time" 
-                itens={props.times}
-                valor={time}
-                aoAlterado={time => setTime(time)}
-                />
-                <Botao>
-                    Criar Card
-                </Botao>
+                    obrigatorio={true}
+                    label='Times'
+                    items={times} 
+                    valor={time}
+                    aoAlterado={valor => setTime(valor)}/>
+                <Botao texto='Criar card' />
             </form>
         </section>
-
     )
 }
 
 export default Formulario
-

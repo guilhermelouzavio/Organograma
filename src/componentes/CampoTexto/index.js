@@ -1,30 +1,18 @@
-import { useState } from 'react';
-import './CampoTexto.css'
+import './campo-texto.css'
 
-const CampoTexto = (props) =>{
-    //console.log(props)
-    const placeholderModificada = `${props.placeholder}...`;
-
-    //toda vez alterado o valor o estado muda e assim o 
+ //toda vez alterado o valor o estado muda e assim o 
     //componente atualiza na tela
     //const [valor,setValor] = useState('Guilherme');
     
     //abaixo estamos elevando o estado do componente 
     //para o formulario , para que cada botao tenha
     //o seu proprio estado
-    const aoDigitar = (evento) => {
-       props.aoAlterado(evento.target.value)
-    }
-
- return (
-    <div className='campo-texto'>   
-        <label>{props.label}</label>
-        <input value={props.valor} onChange={aoDigitar}  required={props.obrigatorio} placeholder={placeholderModificada}/>
-    </div>
-
- )
-
-
+    
+const CampoTexto = ({ label, placeholder, valor, aoAlterado, obrigatorio = false }) => {
+    return (<div className='campo-texto'>
+        <label>{label}</label>
+        <input value={valor} onChange={evento => aoAlterado(evento.target.value)} required={obrigatorio} placeholder={placeholder}/> 
+    </div>)
 }
 
 export default CampoTexto
