@@ -36,6 +36,14 @@ Como instalar novas dependências na sua aplicação;
 Diferença entre export e export default.
 
 
+modulo 7:
+A diferença entre two-way data binding e one-way data binding;
+Por que o React utiliza one-way data binding;
+Por que utilizar id é importante no React.
+
+
+
+
 sites uteis:
 
 https://ant.design/ - componentes prontos
