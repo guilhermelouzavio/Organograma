@@ -42,8 +42,6 @@ Por que o React utiliza one-way data binding;
 Por que utilizar id é importante no React.
 
 
-
-
 sites uteis:
 
 https://ant.design/ - componentes prontos
@@ -54,3 +52,20 @@ publicação de site: Vercel.com
 
 https://www.alura.com.br/formacao-next-js
 https://www.alura.com.br/formacao-react-ts
+
+---------------------------------------------------------------------------------------------------------
+
+Olá, Guilherme! Tudo bem?
+
+Você está absolutamente certo em pensar sobre a organização do código, especialmente em projetos maiores. 
+Manter todas as funções no arquivo App.js pode realmente tornar o código difícil de manter e entender. Para lidar com isso, existem algumas boas práticas e padrões de projeto que você pode considerar:
+
+Componentização: Divida sua aplicação em componentes menores e mais gerenciáveis. Cada componente deve ter uma responsabilidade clara. Por exemplo, se você tem uma lista de tarefas, pode ter um componente TaskList e um componente TaskItem.
+
+Separação de Funções: Em vez de definir todas as funções no App.js, você pode movê-las para arquivos separados. Por exemplo, se uma função é usada apenas por um componente específico, considere defini-la dentro do arquivo desse componente ou em um arquivo de utilidades.
+
+Arquitetura em Camadas: Adote uma estrutura de pastas que reflita a arquitetura da sua aplicação. Por exemplo:
+
+components/: para componentes reutilizáveis.
+pages/: para componentes que representam páginas inteiras.
+utils/: para funções auxiliares que podem ser usadas em vários lugares.
